@@ -5,11 +5,13 @@ import ProductItem from "./ProductItem";
 import AboutSection from "./AboutSection";
 import Card from "./Card";
 
+
+
 export{
     Navbar,
     HeroSection,
     ProductSection,
     ProductItem,
     AboutSection,
-    Card
+    Card,
 }

@@ -31,7 +31,7 @@ const Navbar = ({ isLoggedIn }) => {
                     <img src={logo} className="ml-2 md:ml-10 w-20 object-contain" alt="Logo" />
                 </Link>
                 <div
-                    style={{ display: isMobile ? 'block' : 'none', cursor: 'pointer', fontSize: '24px' }}
+                    style={{ display: isMobile ? 'block' : 'none', cursor: 'pointer', fontSize: '45px' }}
                     onClick={toggleMenu}
                     className
                 >

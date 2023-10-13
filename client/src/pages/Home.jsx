@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar, HeroSection, ProductSection, AboutSection } from '../components';
 import transition from '../transition.jsx'
+import Footer from '../components/Footer';
 
 const Home = ({isLoggedIn}) => {
   return (
@@ -10,8 +11,9 @@ const Home = ({isLoggedIn}) => {
         <HeroSection/>
         
         <ProductSection/>
-        <div className='w-full h-0 md:h-24'></div>
+        {/* <div className='w-full h-0 md:h-24'></div> */}
         <AboutSection/>
+        <Footer/>
     </>
   )
 }

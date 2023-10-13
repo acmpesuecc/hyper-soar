@@ -18,6 +18,7 @@ const Navbar = ({isLoggedIn}) => {
                 {!isLoggedIn && <li className="cursor-pointer text-xs md:text-lg transition-all hover:font-bold"><Link to='/login' smooth="true">LOG IN</Link></li>}
                 <li className="cursor-pointer text-xs md:text-lg transition-all hover:font-bold"><ScrollLink to='products' smooth="true">PRODUCTS</ScrollLink></li>
                 <li className="cursor-pointer text-xs md:text-lg transition-all hover:font-bold"><ScrollLink to='about_us' smooth="true">ABOUT US</ScrollLink></li>
+                <li className="cursor-pointer text-xs md:text-lg transition-all hover:font-bold"><Link to='/cart' smooth="true">CART</Link></li>
             </ul>
         </div>
         </nav>

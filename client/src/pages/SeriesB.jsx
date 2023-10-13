@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+
 import { logo } from '../assets';
 import { Link } from 'react-router-dom'
 import transition from '../transition.jsx'
 
 const SeriesB = () => {
+    const product = { id: 2, name: 'Drone B', description: 'Our flagship drone, designed to operate in the harshest environments.' };
+
+    const [cartCount, setCartCount] = useState(0);
+
+useEffect(() => {
+    // Get the cart from localStorage and update the cart count
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartCount(cart.length);
+  }, []);
+
+    const addToCart = () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      setCartCount(cart.length);
+    };
   return (
     <div className='md:h-screen'>
         <div className="w-full flex flex-row justify-between mt-[1%]">
@@ -14,6 +31,16 @@ const SeriesB = () => {
                     alt="Logo"
                 />
             </Link>
+            <div className="relative ml-4">
+          <i className="fa fa-shopping-cart fa-2x text-gray-600 cursor-pointer"></i>
+          <Link to='/cart'>
+            {cartCount > 0 && (
+              <span className="absolute -top-2 right-2 bg-slate-500 rounded-full text-white text-xs p-4">
+                {cartCount}
+              </span>
+            )}
+          </Link>
+        </div>
         </div>
         <div className='h-[91%] justify-center flex flex-col items-center'>
             <div className='h-[70%] w-[95%] flex md:flex-row flex-col'>
@@ -26,6 +53,7 @@ const SeriesB = () => {
                         <img src='../categories/cmos.png' className='w-14 md:w-36'/>
                         <img src='../categories/fivek.png' className='w-14 md:w-36'/>
                         <img src='../categories/stable.png' className='w-14 md:w-36'/>
+                        <button onClick={addToCart} className='absolute right-12 bottom-36 flex flex-row w-28 pl-3 pt-1 h-10 bg-green text-white'>Add to Cart</button>
                     </div>
                 </div>
             </div>

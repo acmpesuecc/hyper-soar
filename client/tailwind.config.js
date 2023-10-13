@@ -5,6 +5,10 @@ export default {
 ],
   theme: {
     extend: {
+      maxWidth: {
+        '40': '40%',
+        '60': '60%'
+      },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
         'integral': ['IntegralCF', 'sans-serif']
